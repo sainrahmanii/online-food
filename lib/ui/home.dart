@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:online_food/tab_bar/desserts.dart';
+import 'package:online_food/tab_bar/drinks.dart';
 import 'package:online_food/tab_bar/fast_food.dart';
+import 'package:online_food/tab_bar/fruits.dart';
+import 'package:online_food/tab_bar/seafoods.dart';
+import 'package:online_food/tab_bar/snacks.dart';
 import 'package:online_food/ui/cart_page.dart';
 
 class Home extends StatefulWidget {
@@ -101,10 +105,10 @@ class TabBarWidget extends StatelessWidget {
               children: const [
                 FastFood(),
                 Desserts(),
-                Center(child: Text('Drinks')),
-                Center(child: Text('Snacks')),
-                Center(child: Text('Fruits')),
-                Center(child: Text('Seafoods')),
+                Drinks(),
+                Snacks(),
+                Fruits(),
+                Seafoods(),
               ],
             ),
           ),

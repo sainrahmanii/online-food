@@ -29,7 +29,10 @@ class CardFood extends StatelessWidget {
       child: Row(
         spacing: 18,
         children: [
-          Image.asset(foodImage),
+          CircleAvatar(
+            radius: 36,
+            backgroundImage: AssetImage(foodImage),
+          ),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
