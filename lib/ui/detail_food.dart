@@ -21,6 +21,8 @@ class DetailFood extends StatefulWidget {
 class _DetailFoodState extends State<DetailFood> {
   int _counter = 1;
 
+  bool isFavorite = false;
+
   void increment() {
     setState(() {
       _counter++;
@@ -39,16 +41,6 @@ class _DetailFoodState extends State<DetailFood> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   leading: IconButton(
-      //     onPressed: () => Navigator.pop(context),
-      //     icon: Icon(
-      //       Icons.arrow_back_ios_rounded,
-      //       size: 24,
-      //     ),
-      //   ),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -137,17 +129,26 @@ class _DetailFoodState extends State<DetailFood> {
             Row(
               children: [
                 Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF6F7FB),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Icon(
-                    Icons.favorite_border_rounded,
-                    size: 24,
-                  ),
-                ),
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF6F7FB),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      },
+                      icon: Icon(
+                        isFavorite
+                            ? Icons.favorite_rounded
+                            : Icons.favorite_border_rounded,
+                        color: isFavorite ? Colors.red : Colors.grey,
+                        size: 24,
+                      ),
+                    )),
                 SizedBox(width: 20), // Tambahkan jarak antar tombol
                 Container(
                   width: 60,
