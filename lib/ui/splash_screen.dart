@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:online_food/widgets/custom_navigation_bar.dart';
+import 'package:online_food/ui/register_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Lottie.asset("assets/lottie/splash.json",
             controller: _controller, onLoaded: (composition) {
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen>
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CustomButtomNavigationBar(),
+                  builder: (context) => const RegisterPage(),
                 ),
               );
             });
